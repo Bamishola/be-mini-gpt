@@ -1,15 +1,16 @@
-1ere celllule de code :
+Cellule 1 :
+
 Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
 Corpus : /content/drive/MyDrive/ECL/traitement_de_texte/corpus/moliere.txt
 
------------------------------------------------------
-2eme cellule de code :
+Cellule 2 :
+
 Device : cuda
 GPU : Tesla T4
 <torch._C.Generator at 0x7a7a695dc2d0>
 
------------------------------------------------------
-3eme cellule de code :
+Cellule 3 :
+
 Corpus : /content/drive/MyDrive/ECL/traitement_de_texte/corpus/moliere.txt
 Taille : 1,664,817 caractères
 Aperçu :
@@ -31,25 +32,25 @@ DE MOLIÈRE
   II.   --   LA JALOUSIE DU BARBOUILLÉ, canevas italien.
   III. 1653. L'ÉTOURDI, imitation de l'italie
 
------------------------------------------------------
-4eme cellule de code :
+Cellule 4 :
+
 Vocabulaire : 114 caractères uniques
 Train : 1,498,335 tokens | Val : 166,482 tokens
 
------------------------------------------------------
-5eme cellule de code :
+Cellule 5 :
+
 Les hyperparamètres sont bien définis
 
------------------------------------------------------
-6eme cellule de code :
+Cellule 6 :
+
 get_batch et estimate_loss définis
 
------------------------------------------------------
-7eme cellule de code :
+Cellule 7 :
+
 BigramLanguageModel défini
 
------------------------------------------------------
-8eme cellule de code :
+Cellule 8 :
+
 === Entraînement du Bigramme (baseline) ===
 Paramètres : 74,866
 iter 0: train loss 5.0361, val loss 5.0352
@@ -81,16 +82,16 @@ CAhauperspoin, jeçavi LEt voux  anisan s s d'ou vallie, utr,
 
   le vépl
 
------------------------------------------------------
-9eme cellule de code :
+Cellule 9 :
+
 Bigramme sauvegardé
 
------------------------------------------------------
-10eme cellule de code :
+Cellule 10 :
+
 Head, MultiHeadAttention, FeedForward, Block, myGPT définis
 
------------------------------------------------------
-11eme cellule de code :
+Cellule 11 :
+
 === Entraînement du myGPT ===
 Paramètres : 4,858,482
 iter 0: train loss 4.9020, val loss 4.9077
@@ -116,26 +117,28 @@ moyen-même. Provez-vous rendre ce lieu dans le fot que vous avez
 pris, si qu'avec vous me tiendrez vos pensées? Ce n'est pas offenser
 de me dire; mais
 
------------------------------------------------------
-12eme cellule de code :
+Cellule 12 :
+
 Modèle sauvegardé sur Drive
 
------------------------------------------------------
-13eme cellule de code :
+Cellule 13 :
+
 Bigramme rechargé
 myGPT rechargé
 
------------------------------------------------------
-14eme cellule de code :
+Cellule 14 :
+
 generate() corrigé pour m et bigram_model (top_p actif)
 
------------------------------------------------------
-15eme cellule de code :
+
+Cellule 15 :
+
 Vocabulaire de référence : 31,467 mots uniques
 Métriques définies
 
------------------------------------------------------
-16eme cellule de code :
+
+Cellule 16 :
+
 =======================================================
   Bigramme (baseline)
   Perplexité (PPL)   : 11.04
@@ -172,8 +175,9 @@ Non, non, non, il faut d'une âge liberté sage! Elle m'a bruité que je
 détruis ne ne sait point vu. Vous l'avez f
 =======================================================
 
------------------------------------------------------
-17eme cellule de code :
+
+Cellule 17 :
+
 =======================================================
 PROMPT : "ACTE"
 =======================================================
@@ -223,8 +227,9 @@ un moment. Je l'avoue que c'est une fois médecine, et qui n'a pris:
   «                           «Bercé par «son poëme!» Ce que
   Prétendez-vous d'un peu l'encens d'autre côté.
 
------------------------------------------------------
-18eme cellule de code :
+
+Cellule 18 :
+
 === PROMPTING BIGRAMME (pour comparaison) ===
 
 =======================================================
@@ -261,10 +266,11 @@ DON JUAN va  pa  SIs   ou'yprele  t des Pouspa ce époù  are  mmou'eu, mavounda
 
  pouene tendene plt sti! echôtti  les  bi  Donuns  couvoit oin qu'ouire peutôteren  itous aitomane de Den'e,
 
------------------------------------------------------
-19eme cellule de code :
+
+Cellule 19 :
+
 Stratégie                              TTR   Hall.
-----------------------------------------------------
+
 Standard (T=1.0)                    0.7217  0.0522
 Température basse (T=0.5)           0.8909  0.0182
 Température haute (T=1.5)           0.9688  0.4167
@@ -273,8 +279,9 @@ Top-k (k=50)                        0.8144  0.1856
 Nucleus (p=0.9)                     0.8158  0.1140
 Nucleus (p=0.95) + T=0.8            0.8053  0.1504
 
------------------------------------------------------
-20eme cellule de code :
+
+Cellule 20 :
+
 --- Standard (T=1.0) ---
 
 
@@ -408,8 +415,9 @@ MOLIÈRE.
 
 »Vous vous devez si je ne doive pas vous avez si mauv
 
------------------------------------------------------
-21eme cellule de code :
+
+Cellule 21 :
+
 === Génération par Beam Search (beam_width=5) ===
 Score log-prob : -44.47
 
@@ -417,8 +425,9 @@ Score log-prob : -44.47
 
   ARNOLPHE.
 
------------------------------------------------------
-22eme cellule de code :
+
+Cellule 22 :
+
 === Comparaison tokenisation caractères vs BPE ===
 Caractères :  1,664,817 tokens | vocab = 114
 BPE        :    715,699 tokens | vocab = 50,257
@@ -429,12 +438,14 @@ Même extrait tokenisé différemment :
   Tokens car.  (100) : [32, 32, 9, 1, 1, 1, 8, 8, 1, 1, 1, 35, 24, 1, 33, 24, 35, 38, 44, 42, 32, 28, 1, 27, 44, 1, 25, 24, 41, 25, 38, 44, 32, 35, 35, 85, 7, 1, 54, 52, 65, 56, 73, 52, 70, 1, 60, 71, 52, 63, 60, 56, 65, 9, 0, 1, 1, 32, 32, 32, 9, 1, 11, 16, 15, 13, 9, 1, 35, 3, 85, 43, 38, 44, 41, 27, 32, 7, 1, 60, 64, 60, 71, 52, 71, 60, 66, 65, 1, 55, 56, 1, 63, 3, 60, 71, 52, 63, 60, 56]
   Tokens BPE   (45) : [3978, 13, 220, 220, 1377, 220, 220, 9131, 449, 1847, 20958, 10008, 35480, 31597, 33, 2606, 8267, 38351, 11, 460, 1990, 292, 340, 42690, 13, 198, 220, 6711, 13, 1467, 4310, 13, 406, 6, 38351, 51, 11698, 17931, 11, 40260, 390, 300, 6, 1287, 494]
 
------------------------------------------------------
-23eme cellule de code :
+
+Cellule 23 :
+
 Données BPE prêtes
 
------------------------------------------------------
-24eme cellule de code :
+
+Cellule 24 :
+
 myGPT BPE — Paramètres : 13,716,049
 
 === Entraînement myGPT BPE ===
@@ -447,12 +458,14 @@ iter 2500: val loss 3.0862, PPL 21.9
 iter 2999: val loss 3.0505, PPL 21.1
 Entraînement BPE terminé
 
------------------------------------------------------
-25eme cellule de code :
+
+Cellule 25 :
+
 BPE sauvegardé sur Drive
 
------------------------------------------------------
-26eme cellule de code :
+
+Cellule 26 :
+
 === Texte généré par myGPT BPE ===
 !
   Si si son benêt de ce discours avec moi.
@@ -478,8 +491,9 @@ PPL=21.25  TTR=0.8966  Hall=10.3%
 ⚠ PPL BPE non comparable à PPL caractères (vocabulaires différents).
   On compare la qualité du texte généré : TTR, hallucination, lecture.
 
------------------------------------------------------
-27eme cellule de code :
+
+Cellule 27 :
+
 --- Petit  (2 couches, 2 têtes, ctx=64) ---
 Paramètres : 118,514
   iter 0: train 4.9242, val 4.9177
@@ -503,13 +517,14 @@ Paramètres : 4,858,482
 
 === Résumé hyperparamètres ===
 Config                                            Params      PPL      TTR
--------------------------------------------------------------------------
+
 Petit  (2 couches, 2 têtes, ctx=64)              118,514     5.60   0.9412
 Moyen  (4 couches, 4 têtes, ctx=128)             837,490     4.13   0.9054
 Grand  (6 couches, 8 têtes, ctx=256)           4,858,482     3.51   0.8730
 
------------------------------------------------------
-28eme cellule de code :
+
+Cellule 28 :
+
 =======================================================
   myGPT Top-k (k=50, T=1.0)
   Perplexité (PPL)   : 3.34
@@ -551,7 +566,7 @@ qu'ils se mêle
 TABLEAU COMPARATIF FINAL
 ==============================================================================
 Modèle / Stratégie                             PPL  Val Loss     TTR  Hall.%
-------------------------------------------------------------------------------
+
 Bigramme (baseline)                          11.04    2.4011  0.9015   81.1%
 myGPT standard (T=1.0)                        3.34    1.2074  0.7692   13.9%
 myGPT Top-k (k=50, T=1.0)                     3.34    1.2061  0.8058   10.8%
@@ -561,8 +576,9 @@ myGPT BPE (tiktoken gpt2)                    21.25    3.0562  0.8966   10.3%
 ==============================================================================
 ⚠ PPL BPE non comparable aux autres (vocabulaire différent)
 
------------------------------------------------------
-29eme cellule de code :
+
+Cellule 29 :
+
 === EXTRAITS POUR LE RAPPORT ===
 
 --- Bigramme (baseline) ---
@@ -641,8 +657,7 @@ qu'ils se mêlent à tous les amours que l'intrigue même passée; e
 
 C'est une faveur, qui, a parlé n'es
 
------------------------------------------------------
-30eme cellule de code :
-Sauvegardé sur Google Drive
 
------------------------------------------------------
+Cellule 30 :
+
+Sauvegardé sur Google Drive
