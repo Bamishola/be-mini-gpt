@@ -1,0 +1,648 @@
+1ere celllule de code :
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+Corpus : /content/drive/MyDrive/ECL/traitement_de_texte/corpus/moliere.txt
+
+-----------------------------------------------------
+2eme cellule de code :
+Device : cuda
+GPU : Tesla T4
+<torch._C.Generator at 0x7a7a695dc2d0>
+
+-----------------------------------------------------
+3eme cellule de code :
+Corpus : /content/drive/MyDrive/ECL/traitement_de_texte/corpus/moliere.txt
+Taille : 1,664,817 caractères
+Aperçu :
+﻿OEUVRES COMPLÈTES
+DE MOLIÈRE
+
+
+
+
+  PREMIÈRE ÉPOQUE
+
+  1645-1658
+
+  PREMIÈRES OEUVRES; ESSAIS DE JEUNESSE ET IMITATIONS
+  DE LA COMMEDIA DELL'ARTE
+
+
+  I.    --   LE MÉDECIN VOLANT, canevas italien.
+  II.   --   LA JALOUSIE DU BARBOUILLÉ, canevas italien.
+  III. 1653. L'ÉTOURDI, imitation de l'italie
+
+-----------------------------------------------------
+4eme cellule de code :
+Vocabulaire : 114 caractères uniques
+Train : 1,498,335 tokens | Val : 166,482 tokens
+
+-----------------------------------------------------
+5eme cellule de code :
+Les hyperparamètres sont bien définis
+
+-----------------------------------------------------
+6eme cellule de code :
+get_batch et estimate_loss définis
+
+-----------------------------------------------------
+7eme cellule de code :
+BigramLanguageModel défini
+
+-----------------------------------------------------
+8eme cellule de code :
+=== Entraînement du Bigramme (baseline) ===
+Paramètres : 74,866
+iter 0: train loss 5.0361, val loss 5.0352
+iter 500: train loss 2.4154, val loss 2.4187
+iter 1000: train loss 2.4064, val loss 2.4068
+iter 1500: train loss 2.4019, val loss 2.4106
+iter 2000: train loss 2.3999, val loss 2.4052
+iter 2500: train loss 2.4005, val loss 2.4088
+iter 2999: train loss 2.4014, val loss 2.4092
+
+--- Texte généré par le Bigramme ---
+
+
+
+
+ pont quluronst pou  aue  mesouert méron'u'aitile, us de s IS
+ Moie qucons joue  pagt e SMourisourojonest voretapane mesu MONAGARANARUCEnt dé..
+  LE.
+ prarin. le.
+ fiaièra s nu:
+ siesi les vouris  anéleutois fac pre   pou  ps, que  ausis quthis aind'arigle ris air  qutt di, Vi;
+
+detisut bin ntt [7] lo, voux er ce mes usopospu'eson otrrême?
+   fa  bie, der
+
+
+  soiaiaist doue me sel LINOUROue l'ais n'ore voire à dé rblaies?
+CAhauperspoin, jeçavi LEt voux  anisan s s d'ou vallie, utr,
+
+  le vépl
+
+-----------------------------------------------------
+9eme cellule de code :
+Bigramme sauvegardé
+
+-----------------------------------------------------
+10eme cellule de code :
+Head, MultiHeadAttention, FeedForward, Block, myGPT définis
+
+-----------------------------------------------------
+11eme cellule de code :
+=== Entraînement du myGPT ===
+Paramètres : 4,858,482
+iter 0: train loss 4.9020, val loss 4.9077
+iter 500: train loss 1.6363, val loss 1.6885
+iter 1000: train loss 1.2724, val loss 1.3931
+iter 1500: train loss 1.1349, val loss 1.2992
+iter 2000: train loss 1.0550, val loss 1.2513
+iter 2500: train loss 1.0077, val loss 1.2328
+iter 3000: train loss 0.9636, val loss 1.2186
+iter 3500: train loss 0.9312, val loss 1.2144
+iter 4000: train loss 0.8965, val loss 1.2092
+iter 4500: train loss 0.8680, val loss 1.2094
+iter 4999: train loss 0.8422, val loss 1.2048
+
+--- Texte généré par myGPT (génération standard) ---
+
+il sait aisé si peu jusqu'à l'_Zercier_; il introduision de Molière, par Alain en
+  l'exemplaire de Molière, podérabine rayonisée du Saiso deux
+  louange Ellia avait pmeuvement le sœur est le sens et merve du
+  nature, sur cet avis ou dépit contre l'antitre, et l'ordre au roi, le
+tard, ne peut jamais presque c'est un lieu chez le croyant d'un peu
+moyen-même. Provez-vous rendre ce lieu dans le fot que vous avez
+pris, si qu'avec vous me tiendrez vos pensées? Ce n'est pas offenser
+de me dire; mais
+
+-----------------------------------------------------
+12eme cellule de code :
+Modèle sauvegardé sur Drive
+
+-----------------------------------------------------
+13eme cellule de code :
+Bigramme rechargé
+myGPT rechargé
+
+-----------------------------------------------------
+14eme cellule de code :
+generate() corrigé pour m et bigram_model (top_p actif)
+
+-----------------------------------------------------
+15eme cellule de code :
+Vocabulaire de référence : 31,467 mots uniques
+Métriques définies
+
+-----------------------------------------------------
+16eme cellule de code :
+=======================================================
+  Bigramme (baseline)
+  Perplexité (PPL)   : 11.04
+  Val Loss           : 2.4011
+  TTR (diversité)    : 0.9015
+  Hallucination      : 81.1%
+  Extrait généré :
+  
+ depoiendi   cupa vantse pandie s   PORILUnentrenté [9] ai re lamais e    ête rd'i qusidenerr.
+
+
+doimoilis.
+se ngrt ffat régaie  e?
+ à LEhô   uer De pse foien:
+secabant ple dr,  bl'e pllauraia  pa chare, be qus ELPHILISGANANTrese LGALEBesoboner
+ jue que  agre e t âmen,
+ j'acorirve oin l'uréterd'ier
+=======================================================
+
+=======================================================
+  myGPT standard (T=1.0)
+  Perplexité (PPL)   : 3.34
+  Val Loss           : 1.2074
+  TTR (diversité)    : 0.7692
+  Hallucination      : 13.8%
+  Extrait généré :
+  
+Allez; dites-le contribuer le portrait du XVIIe a si grand elle, puis se
+retrouver sa pothysique le succès de trendre de salets de la maison,
+que M. Loui éclatera sur le théâtre.
+
+ÉLISE.
+Non, non, non, il faut d'une âge liberté sage! Elle m'a bruité que je
+détruis ne ne sait point vu. Vous l'avez f
+=======================================================
+
+-----------------------------------------------------
+17eme cellule de code :
+=======================================================
+PROMPT : "ACTE"
+=======================================================
+ACTEUR.
+
+J'entends deux qu'il est questionné de la forme que ce mot re
+donne qualité.
+
+MASCARILLE.
+
+J'en sais.
+
+MADELON.
+
+Quoi! tu as grand commode d'autres coquettes de celle que tu vois paroître?
+
+SGANARELLE.
+
+Je veux pour toi que, tu me la donnasse-t-on pas, et il se touche maudit, et
+que ton cœur, p
+
+=======================================================
+PROMPT : "SCENE"
+=======================================================
+SCENE.
+
+  Par un moment dont j'apprendrois atteinte,
+  Et qui veut du partout qui la fait voir ma peine.
+
+  MASCARILLE.
+
+  Fut-il qu'un maître à la sévère est encore
+  Ou trop avancé ce titre sens fers ou non mari,
+  Et qu'un plus d'appas que cela soit de qualité?
+  Pour sa murité du mal qui fait son bie
+
+=======================================================
+PROMPT : "DON JUAN"
+=======================================================
+DON JUAN.
+
+Je vous en passe du monde, et moi, c'est le mot de comme
+un moment. Je l'avoue que c'est une fois médecine, et qui n'a pris:
+
+  «Ce seroit, sans autre Égyptiens, et frosse est ridicule.»
+
+  «                           «Bercé par «son poëme!» Ce que
+  Prétendez-vous d'un peu l'encens d'autre côté.
+
+-----------------------------------------------------
+18eme cellule de code :
+=== PROMPTING BIGRAMME (pour comparaison) ===
+
+=======================================================
+PROMPT : "ACTE"
+=======================================================
+ACTE   cauaneutre  faren   in imban fourt r  dunst de qus-vaie    t   s montt ras manss ise_BE qus ces d'a qu'aisabi s plon  appone, ss, qus dux.--ntrallne Mai blel   ll
+ ponsi_,    quis ver..
+ E.
+
+  ches l'e qusonn delit et  point'ueris  JO pone e fitoufos  sais  s-vounqus a OTout r t quièrsin bire
+ mo
+
+=======================================================
+PROMPT : "SCENE"
+=======================================================
+SCENEME.
+ vou Datr GILE leue   lan potunenste ss d de  s-let uist pa  piolai den  pren st mbourt sir ds
+ t.
+ houstaples E.
+leu   vourus duert u  coruris,
+ is ent at danarietrendrt à rs rir lar  ese de.
+ far ondena r  euint. entin'elagnd d'ais
+ ALE, ucharix, laussen ceuen faurtroitraisel'ade.   prentés-it
+
+=======================================================
+PROMPT : "DON JUAN"
+=======================================================
+DON JUAN va  pa  SIs   ou'yprele  t des Pouspa ce époù  are  mmou'eu, mavoundantoraule le  qurst ne ue DONNEnte LCÈN'ar  voitouie AREoue! quss.
+
+  qus Érruie meser cèrde birs'elusaie, iomore s je
+
+
+
+
+ pouene tendene plt sti! echôtti  les  bi  Donuns  couvoit oin qu'ouire peutôteren  itous aitomane de Den'e,
+
+-----------------------------------------------------
+19eme cellule de code :
+Stratégie                              TTR   Hall.
+----------------------------------------------------
+Standard (T=1.0)                    0.7217  0.0522
+Température basse (T=0.5)           0.8909  0.0182
+Température haute (T=1.5)           0.9688  0.4167
+Top-k (k=10)                        0.8558  0.1923
+Top-k (k=50)                        0.8144  0.1856
+Nucleus (p=0.9)                     0.8158  0.1140
+Nucleus (p=0.95) + T=0.8            0.8053  0.1504
+
+-----------------------------------------------------
+20eme cellule de code :
+--- Standard (T=1.0) ---
+
+
+Ah! Lucas! l'usage, (Il disait.) Mais, tout le baille bon.) Allons, mêle,
+à vous dire le plus maudit.
+
+MASCARILLE.
+
+Je vous demeurerai.
+
+MADELON.
+
+Il est vrai, monsieur Gorgibus.
+
+  Le mieux, ou cela qui de sa voir sa manière.
+
+MASCARILLE.
+
+Je ne sais pas d'y aimer jusqu'ici flatte.
+
+VALÈRE.
+
+Quoi
+
+--- Température basse (T=0.5) ---
+
+  Pour ce que vous m'avez dit, ma colère est tout vous.
+  Il faut que le temps se vouloit se faire enflat;
+  Et ce n'est pas qu'un amour qui pour soi sa flamme,
+  Et qui m'oblige à rendre contre cela je me plains.
+
+  ARSINOÉ.
+
+  Monsieur, laissez-moi mon courroux soupçon.
+
+  AGNÈS.
+
+  Non. Mais je 
+
+--- Température haute (T=1.5) ---
+
+  J'ose! prière...
+
+  ELVIRE, comment.
+
+          Tout frabile sur le même retouble.
+
+  ÉRASTEORILLE.
+
+  Il'avoit-fêtu, iant pitié déjà, Conjure;
+  Sous six étoiendant ainsi la irnjure.
+  Est-ce bon dans là-dessus donnée d'elle.
+
+    Lucinde, payage, à la fens contre Sganque surpre?
+
+  AGNÈS.
+
+  El
+
+--- Top-k (k=10) ---
+
+  Ils trompent fait là-dus divins,
+  Que les brales mystères; ils croyant tout ce qui sont
+  Allons ne s'apportent jamais rien d'inquiétude,
+  Et, sortir de son frère... Mais, avec cette grace
+  Monsieur, l'aventure eu d'un point, pour elle, trop lonna,
+  Elle devroit être sens accompagné plus de m
+
+--- Top-k (k=50) ---
+
+
+  Que c'est usé vous remuer?
+
+  ALCESTE.
+
+                                                          Et vous vous
+  Laissez.
+
+  ARNOLPHE.
+
+                            Suffit
+  Il se dédout d'une belle use très-assuré.
+
+  ARNOLPHE.
+
+  Avec quanité je fais, que je suis époux!
+  Hélas! voilà, ne vous 
+
+--- Nucleus (p=0.9) ---
+
+
+  Après ce demeurer qu'on peut vous plaire,
+  Et je suis déjà préparer le traître,
+  Que vous voyez des fiertis brassembladés;
+  Mais, si l'autre, allons, chargez-le compris,
+  Nous allez terrible et la vice,
+  Nous voyons d'un charmant esprit soit mauvaise;
+  Et nous n'en est tenus les mains avoi
+
+--- Nucleus (p=0.95) + T=0.8 ---
+
+PREMIER PORTEUR.
+
+»COMPROISE.
+
+»IRISON.
+
+»Eh quoi?
+
+PHILIS.
+
+Oui, Climène, chante, nourrant.
+
+MOLIÈRE.
+
+»Jusqu'au volet.
+
+MADEMOISELLE BÉJART.
+
+»Je vous acquitterai personne du monde.
+
+LA PRINCESSE.
+
+Comment?
+
+MOLIÈME.
+
+Oui, monsieur.
+
+MOLIÈRE.
+
+»Vous vous devez si je ne doive pas vous avez si mauv
+
+-----------------------------------------------------
+21eme cellule de code :
+=== Génération par Beam Search (beam_width=5) ===
+Score log-prob : -44.47
+
+
+
+  ARNOLPHE.
+
+-----------------------------------------------------
+22eme cellule de code :
+=== Comparaison tokenisation caractères vs BPE ===
+Caractères :  1,664,817 tokens | vocab = 114
+BPE        :    715,699 tokens | vocab = 50,257
+Compression BPE : 2.33x moins de tokens
+
+Même extrait tokenisé différemment :
+  Texte        : "II.   --   LA JALOUSIE DU BARBOUILLÉ, canevas italien.\n  III. 1653. L'ÉTOURDI, imitation de l'italie"
+  Tokens car.  (100) : [32, 32, 9, 1, 1, 1, 8, 8, 1, 1, 1, 35, 24, 1, 33, 24, 35, 38, 44, 42, 32, 28, 1, 27, 44, 1, 25, 24, 41, 25, 38, 44, 32, 35, 35, 85, 7, 1, 54, 52, 65, 56, 73, 52, 70, 1, 60, 71, 52, 63, 60, 56, 65, 9, 0, 1, 1, 32, 32, 32, 9, 1, 11, 16, 15, 13, 9, 1, 35, 3, 85, 43, 38, 44, 41, 27, 32, 7, 1, 60, 64, 60, 71, 52, 71, 60, 66, 65, 1, 55, 56, 1, 63, 3, 60, 71, 52, 63, 60, 56]
+  Tokens BPE   (45) : [3978, 13, 220, 220, 1377, 220, 220, 9131, 449, 1847, 20958, 10008, 35480, 31597, 33, 2606, 8267, 38351, 11, 460, 1990, 292, 340, 42690, 13, 198, 220, 6711, 13, 1467, 4310, 13, 406, 6, 38351, 51, 11698, 17931, 11, 40260, 390, 300, 6, 1287, 494]
+
+-----------------------------------------------------
+23eme cellule de code :
+Données BPE prêtes
+
+-----------------------------------------------------
+24eme cellule de code :
+myGPT BPE — Paramètres : 13,716,049
+
+=== Entraînement myGPT BPE ===
+iter 0: val loss 11.0203, PPL 61104.5
+iter 500: val loss 3.5567, PPL 35.0
+iter 1000: val loss 3.2482, PPL 25.7
+iter 1500: val loss 3.1381, PPL 23.1
+iter 2000: val loss 3.0945, PPL 22.1
+iter 2500: val loss 3.0862, PPL 21.9
+iter 2999: val loss 3.0505, PPL 21.1
+Entraînement BPE terminé
+
+-----------------------------------------------------
+25eme cellule de code :
+BPE sauvegardé sur Drive
+
+-----------------------------------------------------
+26eme cellule de code :
+=== Texte généré par myGPT BPE ===
+!
+  Si si son benêt de ce discours avec moi.
+
+  MASCARILLE.
+
+                Oui.
+
+  SGANARELLE.
+
+                                        C'est parlé si fort
+  dans la maison, et vous vouliez à nos intentions;
+  Enleurs, dans mes vains et cœurs tous les défauts
+  bases siècle.
+
+  LE NOTAIRE DU PALAIS-ROY-BALLET.
+
+C'est une faveur, qui, a parlé n'est point de même chose; et,
+  Il avait en repos fâ
+
+PPL=21.25  TTR=0.8966  Hall=10.3%
+
+⚠ PPL BPE non comparable à PPL caractères (vocabulaires différents).
+  On compare la qualité du texte généré : TTR, hallucination, lecture.
+
+-----------------------------------------------------
+27eme cellule de code :
+--- Petit  (2 couches, 2 têtes, ctx=64) ---
+Paramètres : 118,514
+  iter 0: train 4.9242, val 4.9177
+  iter 1000: train 1.8698, val 1.8819
+  iter 1999: train 1.6755, val 1.7199
+  → PPL=5.60  TTR=0.9412
+
+--- Moyen  (4 couches, 4 têtes, ctx=128) ---
+Paramètres : 837,490
+  iter 0: train 4.8973, val 4.8833
+  iter 1000: train 1.5225, val 1.5860
+  iter 1999: train 1.3087, val 1.4225
+  → PPL=4.13  TTR=0.9054
+
+--- Grand  (6 couches, 8 têtes, ctx=256) ---
+Paramètres : 4,858,482
+  iter 0: train 4.9567, val 4.9596
+  iter 1000: train 1.2681, val 1.3917
+  iter 1999: train 1.0550, val 1.2569
+  → PPL=3.51  TTR=0.8730
+
+=== Résumé hyperparamètres ===
+Config                                            Params      PPL      TTR
+-------------------------------------------------------------------------
+Petit  (2 couches, 2 têtes, ctx=64)              118,514     5.60   0.9412
+Moyen  (4 couches, 4 têtes, ctx=128)             837,490     4.13   0.9054
+Grand  (6 couches, 8 têtes, ctx=256)           4,858,482     3.51   0.8730
+
+-----------------------------------------------------
+28eme cellule de code :
+=======================================================
+  myGPT Top-k (k=50, T=1.0)
+  Perplexité (PPL)   : 3.34
+  Val Loss           : 1.2061
+  TTR (diversité)    : 0.8058
+  Hallucination      : 10.8%
+  Extrait généré :
+  
+CHARLOTTE.
+
+Puisque donc vous m'avez aussitôt de ma soupçon et une nuit assez lois
+immourée des tendres. Tous les hommes, c'est assuré mon invention pour tous vos
+offenses ont dit; mais il doit cent ordre-tois aussi, c'est un
+objet effet; qu'on garde de tous vos moments fort offérent
+qu'ils se mêle
+=======================================================
+
+=======================================================
+  myGPT Nucleus (p=0.95, T=0.8)
+  Perplexité (PPL)   : 3.34
+  Val Loss           : 1.2074
+  TTR (diversité)    : 0.7737
+  Hallucination      : 3.6%
+  Extrait généré :
+  
+
+  Pour moi, par des armes, mon cœur, la maîtresse.
+  Mon père, qu'on peut tout le monde respirer.
+
+  LYCARSIS.
+
+  Moi de son des précipiteuses, et l'on s'est dit
+  Ce qu'il fait juger. Mais enfin que le contre fluchement
+  Qui puisse me trouver sensible, et que vous doit être si
+  Pour compliment 
+=======================================================
+
+==============================================================================
+TABLEAU COMPARATIF FINAL
+==============================================================================
+Modèle / Stratégie                             PPL  Val Loss     TTR  Hall.%
+------------------------------------------------------------------------------
+Bigramme (baseline)                          11.04    2.4011  0.9015   81.1%
+myGPT standard (T=1.0)                        3.34    1.2074  0.7692   13.9%
+myGPT Top-k (k=50, T=1.0)                     3.34    1.2061  0.8058   10.8%
+myGPT Nucleus (p=0.95, T=0.8)                 3.34    1.2074  0.7737    3.6%
+myGPT Beam Search (w=5)                       3.34    1.2045  1.0000    0.0%
+myGPT BPE (tiktoken gpt2)                    21.25    3.0562  0.8966   10.3%
+==============================================================================
+⚠ PPL BPE non comparable aux autres (vocabulaire différent)
+
+-----------------------------------------------------
+29eme cellule de code :
+=== EXTRAITS POUR LE RAPPORT ===
+
+--- Bigramme (baseline) ---
+
+ depoiendi   cupa vantse pandie s   PORILUnentrenté [9] ai re lamais e    ête rd'i qusidenerr.
+
+
+doimoilis.
+se ngrt ffat régaie  e?
+ à LEhô   uer De pse foien:
+secabant ple dr,  bl'e pllauraia  pa chare, be qus ELPHILISGANANTrese LGALEBesoboner
+ jue que  agre e t âmen,
+ j'acorirve oin l'uréterd'ieres pans,
+ a  LIEt sis be  dens,
+
+SA dute tsese jai
+
+--- myGPT standard (T=1.0) ---
+
+Allez; dites-le contribuer le portrait du XVIIe a si grand elle, puis se
+retrouver sa pothysique le succès de trendre de salets de la maison,
+que M. Loui éclatera sur le théâtre.
+
+ÉLISE.
+Non, non, non, il faut d'une âge liberté sage! Elle m'a bruité que je
+détruis ne ne sait point vu. Vous l'avez fait toute votre confidence; de
+laisser toutes les 
+
+--- myGPT Top-k (k=50, T=1.0) ---
+
+CHARLOTTE.
+
+Puisque donc vous m'avez aussitôt de ma soupçon et une nuit assez lois
+immourée des tendres. Tous les hommes, c'est assuré mon invention pour tous vos
+offenses ont dit; mais il doit cent ordre-tois aussi, c'est un
+objet effet; qu'on garde de tous vos moments fort offérent
+qu'ils se mêlent à tous les amours que l'intrigue même passée; e
+
+--- myGPT Nucleus (p=0.95, T=0.8) ---
+
+
+  Pour moi, par des armes, mon cœur, la maîtresse.
+  Mon père, qu'on peut tout le monde respirer.
+
+  LYCARSIS.
+
+  Moi de son des précipiteuses, et l'on s'est dit
+  Ce qu'il fait juger. Mais enfin que le contre fluchement
+  Qui puisse me trouver sensible, et que vous doit être si
+  Pour compliment avec ses amis?
+  Elle a fertile les meilleures châ
+
+--- myGPT Beam Search (w=5) ---
+
+
+  ARNOLPHE.
+
+                                                                                                                                                                                                                                                                                                                                               
+
+--- myGPT BPE (tiktoken gpt2) ---
+!
+  Si si son benêt de ce discours avec moi.
+
+  MASCARILLE.
+
+                Oui.
+
+  SGANARELLE.
+
+                                        C'est parlé si fort
+  dans la maison, et vous vouliez à nos intentions;
+  Enleurs, dans mes vains et cœurs tous les défauts
+  bases siècle.
+
+  LE NOTAIRE DU PALAIS-ROY-BALLET.
+
+C'est une faveur, qui, a parlé n'es
+
+-----------------------------------------------------
+30eme cellule de code :
+Sauvegardé sur Google Drive
+
+-----------------------------------------------------

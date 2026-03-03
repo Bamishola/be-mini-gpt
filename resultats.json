@@ -1,0 +1,137 @@
+{
+  "corpus": "/content/drive/MyDrive/ECL/traitement_de_texte/corpus/moliere.txt",
+  "resultats": [
+    {
+      "label": "Bigramme (baseline)",
+      "ppl": 11.04,
+      "val_loss": 2.4011,
+      "ttr": 0.9015,
+      "hallucination": 0.8106,
+      "sample": "\n depoiendi   cupa vantse pandie s   PORILUnentrenté [9] ai re lamais e    ête rd'i qusidenerr.\n\n\ndoimoilis.\nse ngrt ffat régaie  e?\n à LEhô   uer De pse foien:\nsecabant ple dr,  bl'e pllauraia  pa chare, be qus ELPHILISGANANTrese LGALEBesoboner\n jue que  agre e t âmen,\n j'acorirve oin l'uréterd'ieres pans,\n a  LIEt sis be  dens,\n\nSA dute tsese jaious, c! buextouiébe!  s p pout  jour dave von» tris au'uele ue\n e.\nbirse fût fomontours ANAhomel jetésitrde  veune  aier s;\nPRC'ourt EUNALEllllera le  h! qus BUXINANALE quxtéerdé.\n  mmour:\n à  LLE, fin  s,  és u biere  mait ds veaun éec _, bieut, IIRNEt Dere,\n\n\n let   pleuicagtortrtatiss.\n le ante.\n  pre fenn le  qux cèr l? cos S-llumaure  qudons qux  n  ar prtrivons'usie t ple pla, CQue paque aies iplaga  de dens par,\ns, Voul quriss  s s pantier"
+    },
+    {
+      "label": "myGPT standard (T=1.0)",
+      "ppl": 3.34,
+      "val_loss": 1.2074,
+      "ttr": 0.7692,
+      "hallucination": 0.1385,
+      "sample": "\nAllez; dites-le contribuer le portrait du XVIIe a si grand elle, puis se\nretrouver sa pothysique le succès de trendre de salets de la maison,\nque M. Loui éclatera sur le théâtre.\n\nÉLISE.\nNon, non, non, il faut d'une âge liberté sage! Elle m'a bruité que je\ndétruis ne ne sait point vu. Vous l'avez fait toute votre confidence; de\nlaisser toutes les hommes avençoient que je vous feraient expliquer que je\nvous donnerois, cette oisir paisible de bonne de ma paroîtres[16].\n\nGÉRONIMO, à part.\n\nVa-t-elle être?\n\nSGANARELLE.\n\nQue soyez-vous consulte?\n\nGÉRONIMO.\n\nNon. Je vous rende de vous.\n\nSGANARELLE.\n\nNon.\n\nGÉRONIMO.\n\nVous saurois-je quelque chose.\n\nSGANARELLE.\n\nCe père, il s'en va. Je vous gougerois rien.\n\nGÉRONIMO.\n\nJe ne pensois plus qu'il me l'aperçoit de moi, et qu'ainsi\nde marié.\n\nSGANA4LE,"
+    },
+    {
+      "label": "myGPT Top-k (k=50, T=1.0)",
+      "ppl": 3.34,
+      "val_loss": 1.2061,
+      "ttr": 0.8058,
+      "hallucination": 0.1079,
+      "sample": "\nCHARLOTTE.\n\nPuisque donc vous m'avez aussitôt de ma soupçon et une nuit assez lois\nimmourée des tendres. Tous les hommes, c'est assuré mon invention pour tous vos\noffenses ont dit; mais il doit cent ordre-tois aussi, c'est un\nobjet effet; qu'on garde de tous vos moments fort offérent\nqu'ils se mêlent à tous les amours que l'intrigue même passée; et\nson accience avec cela d'ordre d'abord plaisir, peut, et prendre, toute profondément\npar de licence; je vous prie. Rebête, mon courroux tout. (A la\nSangue.) Voilà Sganarelle, done Elvire, de croire pour un italien. On\nne dit pas, à la mode, perd le garde de mon épouse; et, arrêtant, déjà\ndisposer de ces médecins. Il fallut et sortiser à ceux qui est-ils\ngrandés; mais voient propiciau et que cet amour moi, ou si réduit de\nlanguis et l'humeur. Ah"
+    },
+    {
+      "label": "myGPT Nucleus (p=0.95, T=0.8)",
+      "ppl": 3.34,
+      "val_loss": 1.2074,
+      "ttr": 0.7737,
+      "hallucination": 0.0365,
+      "sample": "\n\n  Pour moi, par des armes, mon cœur, la maîtresse.\n  Mon père, qu'on peut tout le monde respirer.\n\n  LYCARSIS.\n\n  Moi de son des précipiteuses, et l'on s'est dit\n  Ce qu'il fait juger. Mais enfin que le contre fluchement\n  Qui puisse me trouver sensible, et que vous doit être si\n  Pour compliment avec ses amis?\n  Elle a fertile les meilleures châtimens,\n  Nous vous avions d'un autre homme en tient.\n\n   ARNOLPHE.\n\n  Ah! vraiment, comme il ne le veut pas prendre;\n  Et l'on promet que je te puis me rendre\n  De trouver du partout le plus fort couvent;\n  Et j'enrage, si qu'une soucie il est le chose.\n\n  ARNOLPHE.\n\n  Il est vrai qu'objet de vous ouïr, je la vois faire.\n\n  ARNOLPHE.\n\n  Non, je ne suis point de cœur, et qu'à nous trouverons\n  Qu'un si bel souvent sa mouche de mon âme?\n\n  HORACE."
+    },
+    {
+      "label": "myGPT Beam Search (w=5)",
+      "ppl": 3.34,
+      "val_loss": 1.2045,
+      "ttr": 1.0,
+      "hallucination": 0.0,
+      "sample": "\n\n  ARNOLPHE.\n\n                                                                                                                                                                                                                                                                                                                                                                                                  "
+    },
+    {
+      "label": "myGPT BPE (tiktoken gpt2)",
+      "ppl": 21.25,
+      "val_loss": 3.0562,
+      "ttr": 0.8966,
+      "hallucination": 0.1034,
+      "sample": "!\n  Si si son benêt de ce discours avec moi.\n\n  MASCARILLE.\n\n                Oui.\n\n  SGANARELLE.\n\n                                        C'est parlé si fort\n  dans la maison, et vous vouliez à nos intentions;\n  Enleurs, dans mes vains et cœurs tous les défauts\n  bases siècle.\n\n  LE NOTAIRE DU PALAIS-ROY-BALLET.\n\nC'est une faveur, qui, a parlé n'est point de même chose; et,\n  Il avait en repos fâ"
+    }
+  ],
+  "sampling": [
+    {
+      "label": "Standard (T=1.0)",
+      "ppl": 3.35,
+      "val_loss": 1.2078,
+      "ttr": 0.7217,
+      "hallucination": 0.0522,
+      "sample": "\n\nAh! Lucas! l'usage, (Il disait.) Mais, tout le baille bon.) Allons, mêle,\nà vous dire le plus maudit.\n\nMASCARILLE.\n\nJe vous demeurerai.\n\nMADELON.\n\nIl est vrai, monsieur Gorgibus.\n\n  Le mieux, ou cela qui de sa voir sa manière.\n\nMASCARILLE.\n\nJe ne sais pas d'y aimer jusqu'ici flatte.\n\nVALÈRE.\n\nQuoi! vous donnez la façon.\n\nMARTINE.\n\nJe veux bien garder les meilleureux que vous voulez.\n\nSGANARELLE.\n\nIl est vrai, puisque vous demeurez ici vous voulez paraître; il\nest toutes les actions que je ne sais point à me retirer pour des ceux que\nvous aurez.\n\nMARTINE.\n\nComment?\n\nSGANARELLE.\n\nJe pense, s'il vous plaît, de ne point pas en secret.\n\nSGANARELLE.\n\nEt je suis ravi.\n\nGÉRONIMO.\n\nOui.\n\nSGANARELLE."
+    },
+    {
+      "label": "Température basse (T=0.5)",
+      "ppl": 3.35,
+      "val_loss": 1.2084,
+      "ttr": 0.8909,
+      "hallucination": 0.0182,
+      "sample": "\n  Pour ce que vous m'avez dit, ma colère est tout vous.\n  Il faut que le temps se vouloit se faire enflat;\n  Et ce n'est pas qu'un amour qui pour soi sa flamme,\n  Et qui m'oblige à rendre contre cela je me plains.\n\n  ARSINOÉ.\n\n  Monsieur, laissez-moi mon courroux soupçon.\n\n  AGNÈS.\n\n  Non. Mais je suis connu?\n\n ARNOLPHE.\n\n                                                                                                                                                                                                                                                                                                                                                                                        "
+    },
+    {
+      "label": "Température haute (T=1.5)",
+      "ppl": 3.34,
+      "val_loss": 1.2055,
+      "ttr": 0.9688,
+      "hallucination": 0.4167,
+      "sample": "\n  J'ose! prière...\n\n  ELVIRE, comment.\n\n          Tout frabile sur le même retouble.\n\n  ÉRASTEORILLE.\n\n  Il'avoit-fêtu, iant pitié déjà, Conjure;\n  Sous six étoiendant ainsi la irnjure.\n  Est-ce bon dans là-dessus donnée d'elle.\n\n    Lucinde, payage, à la fens contre Sganque surpre?\n\n  AGNÈS.\n\n  Elles usi traître, épou norez-vous qu'elle,\n  Je pourroi; prends grands résultances,\n  Et sans occabou, éclair davoit attaquer Ouccât,\n    Sur s'évagoment.\n\n\nSCÈNQuon démêlait\n  Si sinques cesdons[17]VI, que mon âge à faire tous éprau.\n  Allumant as-tu imroit donc il coura un stylé?\n  Et, qu'avant-qNE à les cœurs[97] bien gardes?\n  Caritiène, étutas, feint beller_,\n  Il en pâle donne, et _il savait p"
+    },
+    {
+      "label": "Top-k (k=10)",
+      "ppl": 3.34,
+      "val_loss": 1.2045,
+      "ttr": 0.8558,
+      "hallucination": 0.1923,
+      "sample": "\n  Ils trompent fait là-dus divins,\n  Que les brales mystères; ils croyant tout ce qui sont\n  Allons ne s'apportent jamais rien d'inquiétude,\n  Et, sortir de son frère... Mais, avec cette grace\n  Monsieur, l'aventure eu d'un point, pour elle, trop lonna,\n  Elle devroit être sens accompagné plus de marie,\n  Montenant des places coups de bon jusqu'à plaint.\n\n  LUCILE.\n\n  Ne veut-on jamais d'où pourquois-tu, piquon-croint,\n  Que diroit-il conte toise offense,\n  Et d'un pardonner pour cela d'amour.\n\n  ÉRASTE.\n\n  Non, monsieur, qu'a-t-il jamais l'étoit trop douce\n  Plaint d'une chose et pour des feux,\n  Et ne voit-il pas plus qu'elle venoit-il plus différer?\n  Lâche, avecque est chérieux, sur ce r"
+    },
+    {
+      "label": "Top-k (k=50)",
+      "ppl": 3.33,
+      "val_loss": 1.2037,
+      "ttr": 0.8144,
+      "hallucination": 0.1856,
+      "sample": "\n\n  Que c'est usé vous remuer?\n\n  ALCESTE.\n\n                                                          Et vous vous\n  Laissez.\n\n  ARNOLPHE.\n\n                            Suffit\n  Il se dédout d'une belle use très-assuré.\n\n  ARNOLPHE.\n\n  Avec quanité je fais, que je suis époux!\n  Hélas! voilà, ne vous plaisir de mes cades[121]?\n\n  HORACE.\n\n  Ce que tu faiss avoir ton cœur vous réussite.\n\n  ARNOLPHE.\n\n  Vitoyez plutôt à vous ignorer la cœur.\n  Acceptre moins fragise, et son dou, ne prie dit.\n\n  HORACE.\n\n  Ah! ne m'en déplaît point le seul mouvement;\n  Et la bonté tranquille en perse et sentire\n  On veut d'un rival se coup de gloire équivante.\n\n  CHRYSALDE.\n\n  Astorguzer de sa jeunesse, ont cher l"
+    },
+    {
+      "label": "Nucleus (p=0.9)",
+      "ppl": 3.35,
+      "val_loss": 1.2086,
+      "ttr": 0.8158,
+      "hallucination": 0.114,
+      "sample": "\n\n  Après ce demeurer qu'on peut vous plaire,\n  Et je suis déjà préparer le traître,\n  Que vous voyez des fiertis brassembladés;\n  Mais, si l'autre, allons, chargez-le compris,\n  Nous allez terrible et la vice,\n  Nous voyons d'un charmant esprit soit mauvaise;\n  Et nous n'en est tenus les mains avoient fruyal,\n  Et je le lui dis, moi qu'on déclare ma vie,\n  D'un cœur de poids de sa pastort déglans discours.\n\n  MYRTIL.\n\n  Mais, quoi fondez-vous donc encor l'a pris?\n  Souffrez-vous que vous m'aviez signer, pour quelque baise,\n  Si mon cœur donne les coups que son cœur trop diffère,\n  Votre âme est bien sur ma fierté,\n  N'entre-point dans quoi que ma colère la bile.\n\n  ÉRASTE.\n\n  Il peut me fair"
+    },
+    {
+      "label": "Nucleus (p=0.95) + T=0.8",
+      "ppl": 3.34,
+      "val_loss": 1.2073,
+      "ttr": 0.8053,
+      "hallucination": 0.1504,
+      "sample": "\nPREMIER PORTEUR.\n\n»COMPROISE.\n\n»IRISON.\n\n»Eh quoi?\n\nPHILIS.\n\nOui, Climène, chante, nourrant.\n\nMOLIÈRE.\n\n»Jusqu'au volet.\n\nMADEMOISELLE BÉJART.\n\n»Je vous acquitterai personne du monde.\n\nLA PRINCESSE.\n\nComment?\n\nMOLIÈME.\n\nOui, monsieur.\n\nMOLIÈRE.\n\n»Vous vous devez si je ne doive pas vous avez si mauvaisement\nque cette épée, et je suis rencontré plus que toutes les\nchoses.\n\nMOLIÈRE.\n\n»Eh bien, mon Dieu! que nous m'avons adméré tout le monde en dire\nvous portrait quelque chose de faire à ce qu'il demande de pardon;\nje m'avoue, qu'en ait rencontré des répugnants, et les voient\npour un coup, de grâce. Les balles, prenant tout à la bonté, c'est\nsa récompensée, que j'ai été là de l'amitié de ma couc"
+    }
+  ],
+  "hyperparam": [
+    {
+      "label": "Petit  (2 couches, 2 têtes, ctx=64)",
+      "params": 118514,
+      "ppl": 5.6,
+      "val_loss": 1.7227,
+      "ttr": 0.9412,
+      "sample": "\n\n     Lors un sois sest de l'un rieur, et poursqu'amai, mourier\n  Pour let d'une tient-out quel détantit devit pime;\n  Où à conte jue vous le nous de promoble rema nu sas ruil grât cer qu'il piest\ntant le qu'il con enfie su pantre icoue, d'un toue ra prosirellent.\n\nGas vous leu dire, otrant ce plut l-est penc. ill. Mombrençe,\n       »Vortra cont, qui n'enfà! qu'en que tien\n  C'one unt-hopatre, au"
+    },
+    {
+      "label": "Moyen  (4 couches, 4 têtes, ctx=128)",
+      "params": 837490,
+      "ppl": 4.13,
+      "val_loss": 1.4176,
+      "ttr": 0.9054,
+      "sample": "\n  Quelque donc donnez moi qu'il se toute une voir,\n  J'ai pouvoir plaître de mon cœur est bras.\n  Il suiment qu'on me chose paroît, à trop ce lui;\n  Je vous ains haut bonne ce vous tout l'en chois pof d'une ardable;\n  Vous je ne tes maître, monsieur, pour ce poup. Asors, cela pièce, carra,\n  M'est icil tel fait sait de qui m'a dire de sa tête.\n  Sans song chause, et tout ce flide l'on croyez-vous"
+    },
+    {
+      "label": "Grand  (6 couches, 8 têtes, ctx=256)",
+      "params": 4858482,
+      "ppl": 3.51,
+      "val_loss": 1.2542,
+      "ttr": 0.873,
+      "sample": "\n\n  Mot grécieux amour[344] cornéent dans un oreil écouve est belle,\n  Et trop de l'intion des souvents de ses petits exprocuges.\n  Andrès vous feint repossiter, de proporter ma beauté\n  Tu n'estrage à la la gloire émoir.\n\n  ARNOLPHE.\n\n                        Loi ne vous plaisir, pourroit le mémoire,\n  La sévèle en un mal et bien prend un journie et se resprit\n  Cette amour que ce ne m'en sacrivan"
+    }
+  ]
+}
