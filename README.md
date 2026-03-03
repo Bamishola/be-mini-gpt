@@ -16,13 +16,13 @@ Inspiré de [nanoGPT](https://github.com/karpathy/nanoGPT) (A. Karpathy).
 
 ## Contenu du dépôt
 ```
-├── BE_miniGPT_LOKE_WONE.ipynb   # Notebook principal (entraînement + évaluation)
-├── myGPTV2.py                   # Architecture myGPT (code du cours)
-├── bigrammeV2.py                # Modèle Bigramme baseline (code du cours)
-├── custom.py                    # Utilitaire d'affichage du modèle
-├── corpus/
-│   └── moliere.txt              # Corpus d'entraînement
-└── rapport_miniGPT_LOKE_WONE.pdf  # Rapport final
+├── BE_miniGPT_LOKE_WONE.ipynb # Notebook (code python)
+├── outputs
+│   ├── outputs_notebook.txt # Sortie des cellules du notebook
+│   └── resultats.json # Génération de texte
+├── rapport_miniGPT_LOKE_WONE.pdf # Rapport du BE
+├── README.md
+└── TP-DECODER-2526.pdf # Énoncé du BE
 ```
 
 ---
@@ -75,6 +75,5 @@ Les checkpoints sont sauvegardés automatiquement sur Google Drive.
 
 ## Références
 
-- Karpathy, A. — [Let's build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 - Karpathy, A. — [nanoGPT](https://github.com/karpathy/nanoGPT)
 - Velcin, J. — Cours MSO 3.7, École Centrale de Lyon (2025-2026)
